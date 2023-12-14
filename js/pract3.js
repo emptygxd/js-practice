@@ -8,7 +8,7 @@ const purpose = 500000;
 const profit = "рента";
 
 const extraMoney = Number(prompt(
-  "Перечислите возможный доход за ваши дополнительные работы"
+  `Перечислите возможный доход за ваши дополнительные работы: ${profit}`
 ));
 
 function getAccumulatedIncome(money, amount, extraMoney) {
