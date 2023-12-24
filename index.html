@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-<script src="./js/pract4.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="root">
+      <div class="form__wrapper">
+        <div class="form__header"><h1>Вход</h1></div>
+        <!-- <form action=""> -->
+        <div class="form__input-container">
+          <div class="form__input">
+            <label for="email">Email</label>
+            <input
+              placeholder="Введите email"
+              name="email"
+              type="text"
+              id="email"
+            />
+            <p id="emailError" class="hidden">
+              Поле обязательно для заполнения
+            </p>
+            <p id="emailInvalid" class="hidden">Email невалидный</p>
+          </div>
+          <div class="form__input" id="emailMargin">
+            <label for="password">Password</label>
+            <input
+              placeholder="Введите пароль"
+              name="password"
+              type="password"
+              id="password"
+            />
+            <p id="passwordError" class="hidden">
+              Поле обязательно для заполнения
+            </p>
+            <p id="passwordInvalid" class="hidden">
+              Пароль должен содержать как минимум 8 символов
+            </p>
+          </div>
+          <div class="form__checkbox" id="passwordMargin">
+            <div>
+              <div>
+                <input type="checkbox" name="checkbox" id="checkbox" />
+                <label id="customCheckbox" for="checkbox"></label>
+              </div>
+              <label for="checkbox">
+                Я согласен получать обновления на почту
+              </label>
+            </div>
+
+            <p id="checkboxInvalid" class="hidden">
+              Поле обязательно для заполнения
+            </p>
+          </div>
+        </div>
+        <button id="enter">Войти</button>
+        <!-- </form> -->
+      </div>
+    </div>
+  </body>
+  <script src="./js/pract7.js"></script>
 </html>

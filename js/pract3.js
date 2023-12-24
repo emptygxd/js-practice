@@ -11,12 +11,12 @@ const extraMoney = Number(prompt(
   `Перечислите возможный доход за ваши дополнительные работы: ${profit}`
 ));
 
-function getAccumulatedIncome(money, amount, extraMoney) {
-  return money + extraMoney - amount;
+function getAccumulatedIncome(income, expenses, extraIncome) {
+  return income + extraIncome - expenses;
 }
 
-function getTargetMonth(accumulatedIncome, purpose) {
-  return Math.ceil(purpose / accumulatedIncome);
+function getTargetMonth(accumulatedIncomeResult, goal) {
+  return Math.ceil(goal / accumulatedIncomeResult);
 }
 
 let accumulatedIncome = getAccumulatedIncome(money, amount, extraMoney);
