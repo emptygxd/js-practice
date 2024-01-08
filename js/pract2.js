@@ -1,10 +1,10 @@
-function isNumber(input) {
-  if (typeof input == "number" && !isNaN(input)) {
-    return input;
+function isNumber(num) {
+  if (typeof num === "number" && !isNaN(num)) {
+    return num;
   } else {
-      input = Number(prompt("Это не число. Попробуйте ещё раз"));
-      isNumberArray = isNumber(input);
-      return isNumberArray
+    num = Number(prompt("Это не число. Попробуйте ещё раз"));
+    isNumberArray = isNumber(num);
+    return isNumberArray;
   }
 }
 
@@ -15,9 +15,10 @@ const expenses = prompt(
   "Перечислите возможные расходы за рассчитываемый период через запятую"
 );
 
-let amount = Number(prompt("Во сколько обойдутся обязательные статьи расходов?"));
+let amount = Number(
+  prompt("Во сколько обойдутся обязательные статьи расходов?")
+);
 amount = isNumber(amount);
-
 
 const deposit = confirm("Есть ли у вас вклад в банке?");
 const purpose = 500000;
@@ -31,15 +32,19 @@ console.log(`${period} - количество месяцев, необходим
 const budgetDay = Math.floor(budgetMonth / 30);
 console.log(`Свободный бюджет на 1 день: ${budgetDay}`);
 
-if (budgetMonth >= 60000 && typeof(budgetMonth) == 'number') {
+if (budgetMonth >= 60000 && typeof budgetMonth === "number") {
   console.log("У вас высокий уровень дохода");
 }
-if (budgetMonth >= 30000 && budgetMonth < 60000 && typeof(budgetMonth) == 'number') {
+if (
+  budgetMonth >= 30000 &&
+  budgetMonth < 60000 &&
+  typeof budgetMonth === "number"
+) {
   console.log("У вас средний уровень дохода");
 }
-if (budgetMonth > 0 && budgetMonth < 30000 && typeof(budgetMonth) == 'number') {
+if (budgetMonth > 0 && budgetMonth < 30000 && typeof budgetMonth === "number") {
   console.log("К сожалению у вас уровень дохода ниже среднего");
 }
-if (budgetMonth < 0 || typeof(budgetMonth) != 'number') {
+if (budgetMonth < 0 || typeof budgetMonth !== "number") {
   console.log("Что-то пошло не так");
 }

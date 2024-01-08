@@ -80,10 +80,9 @@ form {
 }
 
 .form__checkbox {
-
 }
 
-.form__checkbox > div{
+.form__checkbox > div {
   display: flex;
   align-items: center;
   gap: 10px;

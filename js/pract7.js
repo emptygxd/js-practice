@@ -19,11 +19,13 @@ const user = {
   email: "",
   password: "",
 };
-/**
- * email.classList.contains("warning") &&
-      emailInvalid.classList.contains("email-invalid")
-      margin-top: -19px
- */
+
+function validateEmail(email) {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 function checkEmail() {
   if (!validateEmail(email.value)) {
     email.classList.add("warning");
@@ -36,7 +38,7 @@ function checkEmail() {
     emailMargin.setAttribute("style", "margin-top: 5px");
   }
 
-  if (email.value == "") {
+  if (!email.value) {
     if (
       !(
         email.classList.contains("warning") &&
@@ -81,7 +83,7 @@ function checkPassword() {
     passwordMargin.setAttribute("style", "margin-top: 5px");
   }
 
-  if (password.value == "") {
+  if (!password.value) {
     if (
       !(
         password.classList.contains("warning") &&
@@ -137,17 +139,11 @@ function checkAll() {
     !(
       email.classList.contains("warning") ||
       password.classList.contains("warning") ||
-      customCheckbox.classList.contains("warning")  
+      customCheckbox.classList.contains("warning")
     )
   ) {
     console.log(user);
   }
-}
-
-function validateEmail(email) {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
 }
 
 enter.addEventListener("click", checkEmail);

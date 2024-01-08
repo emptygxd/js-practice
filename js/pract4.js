@@ -8,7 +8,7 @@ function getAnswer(string) {
   return prompt(string);
 }
 
-function more(){
+function more() {
   answer = getAnswer(
     `Загаданное чиcло больше. Осталось попыток: ${5 - attempts}`
   );
@@ -16,7 +16,7 @@ function more(){
   getResult();
 }
 
-function less(){
+function less() {
   answer = getAnswer(
     `Загаданное чиcло меньше. Осталось попыток: ${5 - attempts}`
   );
@@ -24,7 +24,7 @@ function less(){
   getResult();
 }
 
-function win(){
+function win() {
   history.push(`Игра номер ${gameCounter}. Попыток: ${attempts}`);
   if (confirm("Поздравляю, Вы угадали!!! Хотите сыграть ещё?")) {
     console.log(history);
@@ -40,39 +40,39 @@ function win(){
   }
 }
 
-function lose(){
+function lose() {
   history.push(`Игра №${gameCounter} проиграна :(`);
 
-    if (confirm("Попытки закончились, хотите сыграть ещё?")) {
-      console.log(history);
+  if (confirm("Попытки закончились, хотите сыграть ещё?")) {
+    console.log(history);
 
-      gameCounter++;
-      attempts = 1;
+    gameCounter++;
+    attempts = 1;
 
-      randomNumber = getRandomIntInclusive(1, 10);
-      answer = getAnswer("Угадайте число от 1 до 10");
-      getResult();
-    } else {
-      console.log(history);
-    }
+    randomNumber = getRandomIntInclusive(1, 10);
+    answer = getAnswer("Угадайте число от 1 до 10");
+    getResult();
+  } else {
+    console.log(history);
+  }
 }
 
 function getResult() {
-  if (answer == null) {
+  if (answer === null) {
     alert("Игра окончена");
-    if (history.length == 0) {
+    if (history.length === 0) {
       console.log("История пуста");
     } else {
       console.log(history);
     }
   } else if (answer > randomNumber && attempts <= 5) {
-    less()
+    less();
   } else if (answer < randomNumber && attempts <= 5) {
-    more()
-  } else if (answer == randomNumber) {
-    win()
+    more();
+  } else if (answer === randomNumber) {
+    win();
   } else if (attempts > 5) {
-    lose()
+    lose();
   } else if (typeof answer != "number") {
     answer = getAnswer("Введи число!");
     getResult();

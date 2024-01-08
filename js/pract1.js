@@ -12,8 +12,8 @@ console.log(`Период равен ${period} месяцев`);
 console.log(`Цель заработать ${purpose} рублей`);
 console.log(Math.round(budgetDay));
 
-const expensesArr = [expenses.toLowerCase().split(', ')]
+const expensesArr = [expenses.toLowerCase().split(", ")];
 
-expensesArr.forEach(element => {
-  console.log(element)
+expensesArr.forEach((element) => {
+  console.log(element);
 });
